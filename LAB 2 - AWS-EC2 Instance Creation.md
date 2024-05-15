@@ -10,18 +10,18 @@ Add the given lines, by pressing "INSERT"
 
 ##### Note: 
 1. Replace your allocated `Region` and `AMI ID` of the same Region.
-2. `"Yourname-EC2-1"` with Your Name.
+2. `"Mehar"` with Your Name.
 ```
 provider "aws" {
   profile = "default" # This line is not mandatory.
-  region  = "us-east-2"
+  region  = "us-east-1"
 }
 
 resource "aws_instance" "example" {
-  ami           = "ami-07efac79022b86107"
+  ami           = "ami-04b70fa74e45c3917"
   instance_type = "t2.micro"
   tags = {
-    Name = "Yourname-EC2-1"
+    Name = "Mehar-EC2-1"
   }
 }
 ```
@@ -60,14 +60,14 @@ Replace the AMI ID, by pressing "INSERT"
 ```
 provider "aws" {
   profile = "default"
-  region  = "us-east-2"
+  region  = "us-east-1"
 }
 
 resource "aws_instance" "example" {
-  ami           = "ami-02a89066c48741345"
+  ami           = "ami-0bb84b8ffd87024d8"
   instance_type = "t2.micro"
   tags = {
-    Name = "Yourname-TF-1"
+    Name = "Mehar-EC2-1"
   }
 }
 ```
