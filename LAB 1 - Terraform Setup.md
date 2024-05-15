@@ -83,7 +83,7 @@ vi local.tf
 resource "local_file" "myfile" {
 
   filename = "/home/ubuntu/test.txt"
-  content  = "wel come to terraform"
+  content  = "Welcome to CloudThat Terraform Training"
 }
 ```
 ```
