@@ -1,4 +1,4 @@
-## Understanding Terraform Import
+## Terraform Import
 ```
 mkdir import_lab && cd import_lab
 ```
