@@ -32,8 +32,14 @@ terraform init
 terraform plan
 ```
 ```
+terraform import aws_instance.test_instance <Resource ID>
+```
+Check the resource has been imported in the state file.
+Now if you apply the configuration file no changes will be made to the infra
+```
 terraform apply
 ```
+The pre-existing resource now can be destroyed from terraform.
 ```
 terraform destroy
 ```
