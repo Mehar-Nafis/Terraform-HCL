@@ -1,6 +1,6 @@
 ## Terraform Import
 Before performing the Terraform import lab, you'll need to create an EC2 instance manually in the AWS console to obtain the necessary information like the AMI ID, instance type, and any tags you want to associate with the instance.
-Once the instance is running, you can run the following step to understand Terraform.
+Once the instance is running, you can run the following step to import the infrastructure.
 ```
 mkdir import_lab && cd import_lab
 ```
