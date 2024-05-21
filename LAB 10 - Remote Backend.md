@@ -117,3 +117,48 @@ cd ~
 rm -rf S3-Lab
 ```
 **Note:** Also Ensure to delete the `S3 Bucket` (To delete, first empty the Bucket and then Delete it.)
+
+
+### Task-3: Enabling State Lock on Remote State
+#### Create the DynamoDB Table
+* Navigate to the DynamoDB service by searching for "DynamoDB" in the search bar.
+* Click on the "Create table" button.
+* Configure the Table :
+* `Table name`: Enter a name for your table, e.g., terraform-lock-table.
+* `Partition key`: Set the partition key to `LockID` and choose the data type as `String`.
+* Leave the default settings for the other options (like secondary indexes, encryption, etc.).
+* For `Capacity mode`, you can use `Provisioned` and set the Read capacity units and Write capacity units according to your needs. A common starting point is 5 for both, but you can adjust these based on your expected load.
+* Click on the "Create" button to create the table.
+
+#### Configure Terraform Backend
+
+Update your Terraform configuration file ( backend.tf) with the backend configuration pointing to the new DynamoDB table.
+Example Configuration for main.tf
+```
+terraform {
+  backend "s3" {
+    region = "<Replace your s3 bucket region>"
+    bucket = "<Replace your s3 bucket name>"
+    key    = "terraform/remotestate"
+    dynamodb_table = "terraform-lock-table"
+    encrypt        = true
+  }
+}
+After configuring your backend, you need to initialize it again
+```
+terraform init
+```
+```
+terraform fmt
+```
+```
+terraform validate
+```
+```
+terraform plan
+```
+```
+terraform apply
+```
+Open another console and also apply try to apply from there. You would get an error message, thus proving the State Locking has been enabled.
+
