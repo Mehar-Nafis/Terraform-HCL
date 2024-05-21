@@ -124,7 +124,7 @@ rm -rf S3-Lab
 * Navigate to the DynamoDB service by searching for "DynamoDB" in the search bar.
 * Click on the "Create table" button.
 * Configure the Table :
-* `Table name`: Enter a name for your table, e.g., terraform-lock-table.
+* `Table name`: mehar-terraform-lock-table. `Make sure to change the Mehar to your name to avoid any conflicts`
 * `Partition key`: Set the partition key to `LockID` and choose the data type as `String`.
 * Leave the default settings for the other options (like secondary indexes, encryption, etc.).
 * For `Capacity mode`, you can use `Provisioned` and set the Read capacity units and Write capacity units according to your needs. A common starting point is 5 for both, but you can adjust these based on your expected load.
