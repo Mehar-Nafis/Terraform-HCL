@@ -144,6 +144,7 @@ terraform {
     encrypt        = true
   }
 }
+```
 After configuring your backend, you need to initialize it again
 ```
 terraform init
