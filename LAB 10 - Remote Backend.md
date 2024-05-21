@@ -140,7 +140,7 @@ terraform {
     region = "<Replace your s3 bucket region>"
     bucket = "<Replace your s3 bucket name>"
     key    = "terraform/remotestate"
-    dynamodb_table = "terraform-lock-table"
+    dynamodb_table = "mehar-terraform-lock-table"
     encrypt        = true
   }
 }
