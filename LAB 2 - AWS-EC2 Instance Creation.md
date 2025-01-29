@@ -13,8 +13,7 @@ Add the given lines, by pressing "INSERT"
 2. `"Mehar"` with Your Name.
 ```
 provider "aws" {
-  profile = "default" # This line is not mandatory.
-  region  = "us-east-1"
+ region  = "us-east-1"
 }
 
 resource "aws_instance" "example" {
