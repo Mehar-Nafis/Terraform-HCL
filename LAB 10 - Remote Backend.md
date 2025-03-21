@@ -129,10 +129,11 @@ terraform {
     region = "<Replace your s3 bucket region>"
     bucket = "<Replace your s3 bucket name>"
     key    = "terraform/remotestate"
-    dynamodb_table = "mehar-terraform-lock-table"
-    encrypt        = true
+    use_lockfile=true
   }
 }
+
+
 ```
 After configuring your backend, you need to initialize it again
 ```
