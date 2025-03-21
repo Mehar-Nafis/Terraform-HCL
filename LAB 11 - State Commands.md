@@ -32,3 +32,15 @@ Removes one or more items from the Terraform state. This is typically used when 
 terraform state rm aws_instance.example
 ```
 The above command will update the state file. Once the command is executed the resource should be manually removed from the configuration file. Now if you execute a terraform apply, no changes should be applied for this resource
+
+
+Use the `terraform destroy` command to clean the infrastructure used in this lab, 
+```
+terraform destroy
+```
+Once done, Remove the directory and Zip file using "`rm -rf`"
+```
+cd ~
+rm -rf S3-Lab
+```
+**Note:** Also Ensure to delete the `S3 Bucket` (To delete, first empty the Bucket and then Delete it.)
