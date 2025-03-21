@@ -34,9 +34,6 @@ resource "aws_instance" "terraform-remoteState" {
   instance_type = "t2.nano"
 }
 
-output "ip" {
-  value = aws_instance.terraform-remoteState.public_ip
-}
 ```
 Save the file using "ESCAPE + :wq!"
 ```
@@ -109,20 +106,7 @@ terraform apply
 
 
 ### Task-3: Enabling State Lock on Remote State
-#### Create the DynamoDB Table
-* Navigate to the DynamoDB service by searching for "DynamoDB" in the search bar.
-* Click on the "Create table" button.
-* Configure the Table :
-* `Table name`: mehar-terraform-lock-table. `Make sure to change the Mehar to your name to avoid any conflicts`
-* `Partition key`: Set the partition key to `LockID` and choose the data type as `String`.
-* Leave the default settings for the other options (like secondary indexes, encryption, etc.).
-* For `Capacity mode`, you can use `Provisioned` and set the Read capacity units and Write capacity units according to your needs. A common starting point is 5 for both, but you can adjust these based on your expected load.
-* Click on the "Create" button to create the table.
-
-#### Configure Terraform Backend
-
-Update your Terraform configuration file ( backend.tf) with the backend configuration pointing to the new DynamoDB table.
-Example Configuration for main.tf
+Update with state Locking enabled
 ```
 terraform {
   backend "s3" {
@@ -137,13 +121,7 @@ terraform {
 ```
 After configuring your backend, you need to initialize it again
 ```
-terraform init
-```
-```
-terraform fmt
-```
-```
-terraform validate
+terraform init 
 ```
 ```
 terraform plan
