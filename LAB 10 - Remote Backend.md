@@ -107,17 +107,6 @@ terraform apply
 * Now, You should be able to access the state file and View the resources.
   (It shows the attributes of a single resource in the Terraform state of `aws_instance.terraform-remoteState`.)
 
-Use the `terraform destroy` command to clean the infrastructure used in this lab, 
-```
-terraform destroy
-```
-Once done, Remove the directory and Zip file using "`rm -rf`"
-```
-cd ~
-rm -rf S3-Lab
-```
-**Note:** Also Ensure to delete the `S3 Bucket` (To delete, first empty the Bucket and then Delete it.)
-
 
 ### Task-3: Enabling State Lock on Remote State
 #### Create the DynamoDB Table
